@@ -1,0 +1,2 @@
+export const POPULAR_TV = 'POPULAR_TV';
+export const POPULAR_MOVIES = 'POPULAR_MOVIES';

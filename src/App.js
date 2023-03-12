@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import { Route, Router, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { Home } from "./pages/Home";
+import HomeTemplates from "./templates/Home/HomeTemplate";
+import MovieSearched from "./pages/MovieSearched/MovieSearched";
+import MovieDetail from "./pages/Movies/MovieDetail";
 
+export const history = createBrowserHistory();
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="grid grid-cols-10 ">
+        <Router history={history}>
+          <Switch>
+            <HomeTemplates exact path="/" Component={Home} />
+            <HomeTemplates path="/home" Component={Home} />
+            <HomeTemplates path="/movie/:id" Component={MovieDetail} />
+            <Route path="/search/:id" element={<MovieSearched />} />
+          </Switch>
+        </Router>
+      </div>
   );
 }
 

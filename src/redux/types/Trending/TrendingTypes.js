@@ -1,0 +1,3 @@
+export const TREND_ALL_DAY='TREND_ALL_DAY';
+export const TREND_ALL_WEEK='TREND_ALL_WEEK';
+export const TREND_MOVIE_WEEK='TREND_MOVIE_WEEK';
